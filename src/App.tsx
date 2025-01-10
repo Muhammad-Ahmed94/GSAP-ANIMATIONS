@@ -6,6 +6,7 @@ const App = () => {
   const boxRef2= useRef(null);
   const boxRef3 = useRef(null);
   const boxRef4 = useRef(null);
+  const boxRef5 = useRef(null);
 
   useEffect(() => {
     gsap.to(boxRef1.current, {
@@ -35,6 +36,14 @@ const App = () => {
       delay: 1,
       backgroundColor: "green",
     });
+
+    gsap.to(boxRef4.current, {
+      x: 400,
+      y: 250,
+      duration: 3,
+      delay: 1,
+      backgroundColor: "green",
+    });
   }, []);
 
   return (
@@ -43,6 +52,7 @@ const App = () => {
       <div ref={boxRef2} className="w-24 h-24 rounded-md bg-slate-600 text-center"></div>
       <div ref={boxRef3} className="w-24 h-24 rounded-md bg-slate-600 text-center"></div>
       <div ref={boxRef4} className="w-24 h-24 rounded-md bg-slate-600 text-center"></div>
+      <div ref={boxRef5} className="w-24 h-24 rounded-md bg-slate-600 text-center"></div>
     </div>
   );
 };

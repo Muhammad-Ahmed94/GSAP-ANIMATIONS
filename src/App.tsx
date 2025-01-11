@@ -5,8 +5,6 @@ const App = () => {
   const boxRef1 = useRef(null);
   const boxRef2= useRef(null);
   const boxRef3 = useRef(null);
-  const boxRef4 = useRef(null);
-  const boxRef5 = useRef(null);
 
   useEffect(() => {
     gsap.to(boxRef1.current, {
@@ -29,7 +27,7 @@ const App = () => {
       delay: 1,
       backgroundColor: "gray",
     });
-    
+
   }, []);
 
   return (

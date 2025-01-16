@@ -25,7 +25,6 @@ const App = () => {
   return (
     <div className="h-screen w-screen uppercase flex flex-col justify-center items-center gap-6">
       <div ref={boxRef1} className="w-24 h-24 rounded-md bg-slate-600 text-center"></div>
-      <div ref={boxRef2} className="w-24 h-24 rounded-md bg-slate-600 text-center"></div>
     </div>
   );
 };

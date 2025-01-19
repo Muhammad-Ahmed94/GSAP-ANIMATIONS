@@ -40,19 +40,19 @@ const App = () => {
   }, []);
 
   return (
-    <div className="w-screen h-screen text-lg bg-black text-white pt-16 px-12 capitalize font-bold overflow-hidden">
-      <nav className="h-12 w-full flex justify-between items-center text-white">
-        <div ref={headerRef} className="text-white">
+    <div className="w-screen h-screen text-lg bg-black text-white pt-16 px-6 md:px-12 capitalize font-bold overflow-hidden">
+      <nav className="h-12 w-full flex flex-col md:flex-row md:justify-between items-center text-white sm:textsm">
+        <div ref={headerRef} className="text-white text-center md:text-left">
           <h1>Muneeb Ahmed</h1>
         </div>
-        <div className="flex gap-8 cursor-pointer text-white">
+        <div className="flex gap-4 md:gap-8 cursor-pointer text-white">
           {navItems.map((item) => (
-            <h3 className="text-white nav-items">{item}</h3>
+            <h3 className="text-white nav-items text-sm md:text-base">{item}</h3>
           ))}
         </div>
       </nav>
-      <div className="w-full h-full flex items-center justify-center">
-        <h1 className="text-6xl main-text">welcome to "user" portfolio</h1>
+      <div className="w-full h-full flex items-center justify-center text-center">
+        <h1 className="text-3xl md:text-6xl main-text px-4">welcome to "user" portfolio</h1>
       </div>
     </div>
   );

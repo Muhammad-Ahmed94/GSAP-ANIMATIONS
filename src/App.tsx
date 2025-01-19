@@ -2,29 +2,47 @@ import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 
 const App = () => {
-  const boxRef1 = useRef(null);
-  const boxRef2 = useRef(null);
+  const headerRef = useRef(null);
+
+  const navItems = ['portfolio', 'about', 'contact', 'blog post'];
 
   useEffect(() => {
-    gsap.to(boxRef1.current, {
-      duration: 2,
-      delay: 1,
-      rotate: -360,
-      backgroundColor: "crimson",
+  const tl = gsap.timeline();
+
+    tl.fromTo(headerRef.current, { 
+      y: -15,
+      opacity: 0,
+    }, {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      delay: 1
     });
 
-    gsap.to(boxRef2.current, {
-      x: 400,
-      duration: 2,
-      delay: 1,
-      backgroundColor: "yellow",
-      borderColor: "red"
+    tl.fromTo(".nav-items", {
+      y: -15,
+      opacity: 0,
+    }, {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      stagger: 0.2
     });
+
   }, []);
 
   return (
-    <div className="h-screen w-screen uppercase flex flex-col justify-center items-center gap-6">
-      <div ref={boxRef1} className="w-12 h-12 rounded-md bg-slate-600 text-center"></div>
+    <div className="w-screen h-screen text-lg bg-black text-white pt-16 px-12 uppercase font-bold">
+      <div className="h-12 w-full flex justify-between items-center text-white">
+        <div ref={headerRef} className="text-white">
+          <h1>Muneeb Ahmed</h1>
+        </div>
+        <div className="flex gap-8 cursor-pointer text-white">
+          {navItems.map((item) => (
+            <h3 className="text-white nav-items">{item}</h3>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

@@ -29,11 +29,19 @@ const App = () => {
       stagger: 0.2
     });
 
+    tl.fromTo(".main-text", {
+      opacity: 0,
+      scale: 0.4,
+    }, {
+      opacity: 1,
+      scale: 1,
+      duration: 0.8,
+    })
   }, []);
 
   return (
-    <div className="w-screen h-screen text-lg bg-black text-white pt-16 px-12 uppercase font-bold">
-      <div className="h-12 w-full flex justify-between items-center text-white">
+    <div className="w-screen h-screen text-lg bg-black text-white pt-16 px-12 capitalize font-bold overflow-hidden">
+      <nav className="h-12 w-full flex justify-between items-center text-white">
         <div ref={headerRef} className="text-white">
           <h1>Muneeb Ahmed</h1>
         </div>
@@ -42,6 +50,9 @@ const App = () => {
             <h3 className="text-white nav-items">{item}</h3>
           ))}
         </div>
+      </nav>
+      <div className="w-full h-full flex items-center justify-center">
+        <h1 className="text-6xl main-text">welcome to "user" portfolio</h1>
       </div>
     </div>
   );
